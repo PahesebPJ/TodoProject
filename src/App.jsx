@@ -1,15 +1,27 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+
+//Styles
+import "./App.css";
+
+//Components
+import Layout from "./components/Layout/Layout";
+
+//Pages
+import Login from "./pages/Login/Login";
 
 function App() {
-    const [count, setCount] = useState(0);
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {/*PUBLIC ROUTES*/}
+          <Route path="login" element={<Login />} />
 
-    return (
-        <div className="App">
-            <h1>TodoProject</h1>
-        </div>
-    );
+          {/*PRIVATE ROUTES*/}
+        </Route>
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
