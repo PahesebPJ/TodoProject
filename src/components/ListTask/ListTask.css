@@ -1,0 +1,36 @@
+.list-task {
+    list-style: none;
+    width: 50%;
+}
+
+.list-task__item {
+    color: #000;
+    position: relative;
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.3);
+    border-radius: 3px;
+    transform: translateY(0);
+    animation: add 0.3s linear forwards alternate-reverse;
+}
+
+.list-task__item::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 0px;
+    background-color: #22272e;
+    left: -15px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: 4px;
+    transition: all 0.5s;
+}
+
+.list-task__item--active::before {
+    width: 270px;
+}
