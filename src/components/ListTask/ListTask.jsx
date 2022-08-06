@@ -8,9 +8,15 @@ const ListTask = ({ tasks }) => {
 
     return (
         <ul className="list-task">
-            <li className="list-task__item" onClick={addClass}>
-                Buenas chabales
-            </li>
+            {tasks.map((task) => (
+                <li
+                    key={task.id}
+                    className="list-task__item"
+                    onClick={addClass}
+                >
+                    {task.name}
+                </li>
+            ))}
         </ul>
     );
 };
