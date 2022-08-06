@@ -1,10 +1,10 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
 //Styles
-import "./App.css";
+import './App.css';
 
 //Components
-import Layout from "./components/Layout/Layout";
+import Layout from './components/Layout/Layout';
 
 //Pages
 import Login from "./pages/Login/Login";
@@ -13,12 +13,13 @@ import RequireAuth from "./components/RequireAuth/RequireAuth";
 import TaskPage from "./pages/TaskPage/TaskPage";
 
 function App() {
-  return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          {/*PUBLIC ROUTES*/}
-          <Route path="login" element={<Login />} />
+    return (
+        <div className="App">
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    {/*PUBLIC ROUTES*/}
+                    <Route path="login" element={<Login />} />
+                    <Route path="task" element={<TaskPage />} />
 
           {/*PRIVATE ROUTES*/}
           <Route element={<RequireAuth />}>
@@ -29,6 +30,7 @@ function App() {
       </Routes>
     </div>
   );
+
 }
 
 export default App;
