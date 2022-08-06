@@ -55,7 +55,7 @@ const Login = () => {
       <div className="login-container-box">
         <p className="error-message">{errMsg}</p>
 
-        <h1>Sign In</h1>
+        <h1>Sign In!</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
           <FontAwesomeIcon icon={faUser} className="user-icon" />
