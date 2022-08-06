@@ -7,8 +7,10 @@ import './App.css';
 import Layout from './components/Layout/Layout';
 
 //Pages
-import Login from './pages/Login/Login';
-import TaskPage from './pages/TaskPage/TaskPage';
+import Login from "./pages/Login/Login";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
+import RequireAuth from "./components/RequireAuth/RequireAuth";
+import TaskPage from "./pages/TaskPage/TaskPage";
 
 function App() {
     return (
@@ -19,11 +21,16 @@ function App() {
                     <Route path="login" element={<Login />} />
                     <Route path="task" element={<TaskPage />} />
 
-                    {/*PRIVATE ROUTES*/}
-                </Route>
-            </Routes>
-        </div>
-    );
+          {/*PRIVATE ROUTES*/}
+          <Route element={<RequireAuth />}>
+            <Route path="projects" element={<ProjectsPage />} />
+            <Route path="task" element={<TaskPage />} />
+          </Route>
+        </Route>
+      </Routes>
+    </div>
+  );
+
 }
 
 export default App;

@@ -38,9 +38,10 @@ const Login = () => {
 
       if (response?.data?.auth) {
         const url = response.data.result[0].url;
+        const id = response.data.result[0].id;
         const accessToken = response.data.token;
 
-        setAuth({ username, password, accessToken, url });
+        setAuth({ id, username, password, accessToken, url });
         navigate(from, { replace: true });
       } else {
         setErrMsg(response.data.message);
