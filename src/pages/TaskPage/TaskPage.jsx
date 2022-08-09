@@ -42,8 +42,7 @@ const TaskPage = () => {
                 ref={toastRef}
                 title="Success"
                 message="Task created successfully!"
-                seconds={5}
-                type="success"
+                seconds={3}
             />
             <h1 className="container-task__title">Todo App</h1>
             <form className="form-task" onSubmit={handleSubmit}>
