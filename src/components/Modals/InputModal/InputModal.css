@@ -1,0 +1,76 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.input-modal-header > h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 15px;
+}
+
+.input-container > label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-container > input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ccc;
+  font-size: 1.2rem;
+}
+
+.input-container > input:focus {
+  outline: none;
+}
+
+.input-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 80%;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.input-footer > button {
+  margin-left: 10px;
+}
+
+.input-footer-cancel-button {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-footer-cancel-button:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.input-footer-save-button {
+  background-color: white;
+  border: 1px solid #228be6;
+  color: #228be6;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-footer-save-button:hover {
+  background-color: #228be6;
+  color: white;
+  border: 1px solid white;
+}
