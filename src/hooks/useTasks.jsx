@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import axios from '../api/axios';
+import React, { useEffect, useState } from "react";
+import axios from "../api/axios";
 
 const useTasks = (url) => {
-    const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState();
 
-    const getTask = async () => {
-        const taskData = await axios.get(url);
-        setTasks(taskData.data);
-        console.log(taskData.data);
-    };
+  const getTask = async () => {
+    const taskData = await axios.get(url);
+    setTasks(taskData.data);
+    console.log(taskData.data);
+  };
 
-    useEffect(() => {
-        getTask();
-    }, []);
+  useEffect(() => {
+    getTask();
+  }, []);
 
-    return { tasks };
+  return { tasks };
 };
 
 export default useTasks;

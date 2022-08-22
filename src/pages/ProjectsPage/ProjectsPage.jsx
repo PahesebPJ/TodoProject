@@ -1,17 +1,37 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
+
+//Styles
+import "./ProjectsPage.css";
+
+//Components
+import ProjectList from "../../components/ProjectList/ProjectList";
+import InputModal from "../../components/Modals/InputModal/InputModal";
+
+//hooks
+import useGet from "../../hooks/useGet";
+
+//Config
+import inputs from "../../config/inputs";
 
 function ProjectsPage() {
   const { auth } = useAuth();
-  const [projects, setProjects] = useState([]);
+  const URL_PROJECT = `project/${auth.id}`;
+  const [searchProjectInput, setsearchProjectInput] = useState("");
 
-  useEffect(() => {
-    console.log(auth.id);
-  }, []);
+  const { data } = useGet(URL_PROJECT);
 
   return (
-    <div className="container-task">
+    <div className="project-container">
       <h1>Projects</h1>
+      <input
+        className="project-input"
+        type="text"
+        placeholder="Search Project"
+        onChange={(e) => setsearchProjectInput(e.target.value)}
+      />
+      <ProjectList projects={data} searchInput={searchProjectInput} />
+      <InputModal title="Update Project" inputs={inputs.updateProjectInputs} />
     </div>
   );
 }
